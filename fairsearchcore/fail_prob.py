@@ -174,8 +174,8 @@ class LegalAssignmentKey:
         return True
 
     def __hash__(self):
-        return (self.remaining_candidates + len(self.remaining_block_sizes) << 16) \
-               + self.current_block_number + self.candidates_assigned_so_far
+        return (int(self.remaining_candidates + len(self.remaining_block_sizes) << 16) \
+               + self.current_block_number + self.candidates_assigned_so_far)
 
 
 class MTableFailProbPair:
